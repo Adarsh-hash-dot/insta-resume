@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { nanoid } from 'nanoid' 
-import type { Resume, PersonalInfo, Experience, Education, Skill, Project, Certificate, Language } from '~/types/resume'
+import type { Resume, PersonalInfo, Experience, Education, Skill, Project, Language } from '~/types/resume'
 
 
 function createEmptyResume(): Resume {
@@ -19,13 +19,12 @@ function createEmptyResume(): Resume {
     education: [] as Education[],
     skills: [] as Skill[],
     projects: [] as Project[],
-    certificates: [] as Certificate[],
     languages: [] as Language[],
     theme: 'default'
   }
 }
 
-export const useCounterStore = defineStore('app-data', {
+export const useAppDataStore = defineStore('appData', {
   state: () => ({
     resumes: [] as Resume[],
     activeResumeId: '' as string

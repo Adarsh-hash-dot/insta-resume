@@ -44,14 +44,6 @@ export interface Project {
   link?: string
 }
 
-export interface Certificate {
-  id: string
-  title: string
-  issuer: string
-  date: string
-  description?: string
-}
-
 export interface Language {
   name: string
   proficiency: 'Basic' | 'Conversational' | 'Fluent' | 'Native'
@@ -63,7 +55,6 @@ export interface ResumeData {
   education: Education[]
   skills: Skill[]
   projects: Project[]
-  certificates: Certificate[]
   languages: Language[]
   theme?: string
 }
