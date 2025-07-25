@@ -2,5 +2,5 @@
 @plugin "daisyui";
 
 @plugin "daisyui" {
-  themes: all;
+  themes: light --default;
 }
