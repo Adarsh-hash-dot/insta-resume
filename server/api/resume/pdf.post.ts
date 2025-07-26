@@ -7,8 +7,39 @@ export default defineEventHandler(async (event) => {
     <head>
       <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
       <script src="https://unpkg.com/lucide@latest"></script>
+
     </head>
-    <body>${body.html}</body>
+    <body>${body.html}
+    <script>
+        lucide.createIcons();
+    </script>
+    </body>
+    <style>
+/* Custom print styles for better PDF generation */
+@media print {
+  body { 
+    print-color-adjust: exact; 
+  }
+  .no-print { 
+    display: none; 
+  }
+}
+
+/* Custom bullet styles */
+.custom-bullet {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.custom-bullet::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #374151;
+  font-weight: bold;
+}
+</style>
+
   </html>`;
 
   const browser = await puppeteer.launch({
@@ -25,10 +56,10 @@ export default defineEventHandler(async (event) => {
     format: "A4",
     printBackground: true,
     margin: {
-      top: "20mm",
-      bottom: "20mm",
-      left: "15mm",
-      right: "15mm",
+      top: "0mm",
+      bottom: "0mm",
+      left: "0mm",
+      right: "0mm",
     },
   });
 
