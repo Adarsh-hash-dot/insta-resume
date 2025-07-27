@@ -54,16 +54,13 @@ const generatePdf = async () => {
   <client-only>
     <div class="min-h-screen">
       <!-- Main Content -->
-      <div class="flex h-[calc(100vh-80px)]">
+      <div class="flex h-100vh bg-base-300">
         <!-- Left Panel - Editor -->
-        <div class="w-1/2 overflow-y-auto">
-          <div class="h-20">
-            <button @click="generatePdf" class="font-black btn">Print</button>
-          </div>
+        <div class="w-1/2 min-h-screen overflow-y-auto py-10  px-6">
           <FormsProfile />
           <FormsExperience />
         </div>
-        <div class="w-1/2 overflow-y-auto bg-gray-100 min-h-screen py-10 px-6">
+        <div class="w-1/2 overflow-y-auto min-h-screen py-10 px-6">
           <Template3 />
         </div>
 

@@ -14,7 +14,9 @@ const downloadResume = () => {
   <div class="navbar sticky top-0 z-50 bg-base-100 shadow-sm ">
     <div class="flex-1">
       <a class="btn btn-gost text-xl">Insta Resume</a>
-      <button class="btn btn-outline btn-secondary ml-4"> <LucideLayoutDashboard /> Dashboard</button>
+      <NuxtLink to="/dashboard"> <button class="btn btn-outline btn-secondary ml-4"> <LucideLayoutDashboard /> Dashboard</button></NuxtLink>
+        
+     
     </div>
     <div class="flex-none">
       <ul class="menu menu-horizontal items-center">
