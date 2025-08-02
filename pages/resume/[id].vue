@@ -1,4 +1,5 @@
 <script setup>
+import { LucideAArrowUp } from '#components';
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
@@ -33,7 +34,7 @@ const generatePdf = async () => {
 
   const res = await fetch('/api/resume/pdf', {
     method: 'POST',
-    body: JSON.stringify({ html: resumeHtml}),
+    body: JSON.stringify({ html: resumeHtml }),
     headers: { 'Content-Type': 'application/json' },
   })
 
@@ -52,24 +53,34 @@ const generatePdf = async () => {
 
 <template>
   <client-only>
-      <div class="min-h-screen bg-gray-50">
-    <!-- Main Content -->
-    <div class="flex h-[calc(100vh-80px)]">
-      <!-- Left Panel - Editor -->
-      <div class="w-1/3 overflow-y-auto">
-        <div class="h-20">
-          <button @click="generatePdf" class="bg-red font-black btn">Print</button>
+    <div class="min-h-screen">
+      <!-- Main Content -->
+      <div class="flex h-100vh bg-base-300">
+        <!-- Left Panel - Editor -->
+        <div class="w-1/2 min-h-screen overflow-y-auto py-2  pl-6 pr-3">
+          <div class="flex flex-row">
+            <div class="w-1/6 card bg-base-100 p-3 mr-6 mt-4">
+              <FormsNavigation />
+            </div>
+            <div class="w-5/6">
+              <FormsProfile />
+              <FormsExperience />
+            </div>
+          </div>
+          
         </div>
-        <FormsProfile />
-        <FormsExperience />
+        <div class="w-1/2 overflow-y-auto min-h-screen py-6 pl-3 pr-6">
+          <Template3 />
+        </div>
+
+
+
+        <!-- Right Panel - Resume Preview -->
+
       </div>
-
-
-
-      <!-- Right Panel - Resume Preview -->
-      <Template1 />
     </div>
-  </div>
   </client-only>
 
 </template>
+
+
