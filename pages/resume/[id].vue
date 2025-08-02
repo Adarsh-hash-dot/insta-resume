@@ -1,4 +1,5 @@
 <script setup>
+import { LucideAArrowUp } from '#components';
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
@@ -56,11 +57,19 @@ const generatePdf = async () => {
       <!-- Main Content -->
       <div class="flex h-100vh bg-base-300">
         <!-- Left Panel - Editor -->
-        <div class="w-1/2 min-h-screen overflow-y-auto py-10  px-6">
-          <FormsProfile />
-          <FormsExperience />
+        <div class="w-1/2 min-h-screen overflow-y-auto py-2  pl-6 pr-3">
+          <div class="flex flex-row">
+            <div class="w-1/6 card bg-base-100 p-3 mr-6 mt-4">
+              <FormsNavigation />
+            </div>
+            <div class="w-5/6">
+              <FormsProfile />
+              <FormsExperience />
+            </div>
+          </div>
+          
         </div>
-        <div class="w-1/2 overflow-y-auto min-h-screen py-10 px-6">
+        <div class="w-1/2 overflow-y-auto min-h-screen py-6 pl-3 pr-6">
           <Template3 />
         </div>
 
@@ -73,3 +82,5 @@ const generatePdf = async () => {
   </client-only>
 
 </template>
+
+
